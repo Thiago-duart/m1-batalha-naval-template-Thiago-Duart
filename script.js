@@ -58,8 +58,8 @@ const guessedBoard = []
 
 function checkWinCondition(guessedBoard) {
 
-  let teamS = 0;
-  let teamX = 0;
+  let shipS = 0;
+  let shipX = 0;
   for (let i = 0; i <= guessedBoard.length - 1; i++) {
 
     for (let j = 0; j <= guessedBoard[i].length; j++) {
@@ -67,17 +67,17 @@ function checkWinCondition(guessedBoard) {
       //os ifs estao percorrendo todo o tabuleiro e fazendo contagens dos navios (s) e (x)
       //objetivo da contagem e para saber qual time ganhou
       if (guessedBoard[i][j] === "S") {
-        teamS += 1
+        shipS += 1
 
       }
       if (guessedBoard[i][j] === "X") {
-        teamX += 1
+        shipX += 1
       }
     }
   }
   
-  //se time S ganha me retorna false se o X ganha me retorna true
-  if (teamS > teamX) {
+  //se navio S ganha me retorna false se o X ganha me retorna true
+  if (shipS > shipX) {
     return false
   } else {
     return true
